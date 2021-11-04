@@ -13,6 +13,7 @@ import {
   Link
 } from "react-router-dom";
 import ProductItem from './components/Fakestore/ProductItem';
+import Form from './components/Form/Form';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Product />}/>
           <Route path="/productItem/:id" element={<ProductItem />}/>
+          {/* <Route path="/form" element={<Form />}/> */}
         </Routes>
       </BrowserRouter>
   );

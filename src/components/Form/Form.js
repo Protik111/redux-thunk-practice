@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 const Form = () => {
     const [user, setUser] = useState(
         {
@@ -9,35 +9,35 @@ const Form = () => {
         })
 
     const changeHandler = e => {
-        setState({ [e.target.name]: e.target.value })
+        setUser({ [e.target.name]: e.target.value })
     }
-    const submitHandler = e => {
-        e.preventDefault()
-        console.log(this.user)
-        axios
-            .post('https://jsonplaceholder.typicode.com/posts', this.user)
-            .then(response => {
-                console.log(response)
-            })
-            .catch(error => {
-                console.log(error)
-            })
-    }
+    // const submitHandler = e => {
+    //     e.preventDefault()
+    //     console.log(this.user)
+    //     axios
+    //         .post('https://jsonplaceholder.typicode.com/posts', this.user)
+    //         .then(response => {
+    //             console.log(response)
+    //         })
+    //         .catch(error => {
+    //             console.log(error)
+    //         })
+    // }
 
     return (
         <div>
-            <form onSubmit={submitHandler}>
+            <form >
                 <div>
                     <input
                         type="text"
                         name="userId"
-                        value={userId}
+                        value={user.userId}
                         onChange={(e) => setUser(e.target.value)}
                     />
                     <input
                         type="text"
                         name="title"
-                        value={title}
+                        value={user.title}
                         onChange={(e) => setUser(e.target.value)}
                     />
                     <input
