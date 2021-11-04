@@ -4,16 +4,25 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 import CakeContainer from './components/CakeContainer';
 import IceCreamContainer from './components/IceCreamContainer';
+import Product from './components/Fakestore/Product';
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+import ProductItem from './components/Fakestore/ProductItem';
 
 function App() {
   return (
-    <Provider store={store}>
-      <div className="App">
-        {/* <Input></Input> */}
-        <CakeContainer></CakeContainer>
-        <IceCreamContainer></IceCreamContainer>
-      </div>
-    </Provider>
+    // <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Product />}/>
+          <Route path="/productItem/:id" element={<ProductItem />}/>
+        </Routes>
+      </BrowserRouter>
   );
 }
 
