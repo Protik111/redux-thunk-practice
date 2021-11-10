@@ -17,7 +17,7 @@ import Form from './components/Form/Form';
 
 function App() {
   return (
-    // <Provider store={store}>
+    <Provider store={store}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Product />}/>
@@ -25,6 +25,7 @@ function App() {
           {/* <Route path="/form" element={<Form />}/> */}
         </Routes>
       </BrowserRouter>
+    </Provider>
   );
 }
 

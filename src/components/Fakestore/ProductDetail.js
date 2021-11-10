@@ -1,10 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const ProductDetail = (props) => {
+    
+    const products = useSelector((state) => state.allProducts.products);
+
+    // const { id, title, price, description } = products[0]
+
     const {id, title, description, image, price } = props.pd;
     return (
-        // <Link to="/productItem">
         <div className="col-md-4 productItem text-center">
             <Link to={`/productItem/${id}`}>
                 <div>
