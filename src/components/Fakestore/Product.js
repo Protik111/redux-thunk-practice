@@ -36,7 +36,7 @@ const Product = () => {
             <h2>Product Details</h2>
             <div className="row productContainer">
                 {
-                    products.length <1 ? '...Loading':
+                    products.length <1 ? <h3 className="text-center">...Loading</h3>:
                     products.map(pd => <ProductDetail key={pd.id} pd={pd}></ProductDetail>)
                 }
                 {/* <ProductDetail></ProductDetail> */}
